@@ -62,6 +62,22 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
       end
     end
 
+    context "edit" do
+      it "prepends 'Edit' to the title" do
+        allow(helper).to receive(:action_name).and_return("edit")
+        controller.instance_variable_set :@post, double("post", name: "World")
+        expect(helper.restful_page_title).to eq "Edit World"
+      end
+    end
+
+    context "new" do
+      it "returns the singular model name" do
+        allow(helper).to receive(:action_name).and_return("new")
+        allow(helper).to receive(:_current_path).and_return("/posts/new")
+        expect(helper.restful_page_title).to eq "New post"
+      end
+    end
+
     context "index" do
       it "returns nil when not on show" do
         allow(helper).to receive(:action_name).and_return("index")

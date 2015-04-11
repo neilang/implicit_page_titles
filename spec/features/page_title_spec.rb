@@ -19,13 +19,24 @@ describe "page title", type: :feature do
     expect(page).to have_title "Posts"
   end
 
-  it "uses the main object `title` for show pages" do
+  it "uses the main record `title` for show pages" do
     post = Post.create(title: "My post")
     visit post_path(post)
     expect(page).to have_title "My post"
   end
 
-  it "uses the main object `name` for show pages if there is no title attribute" do
+  it "prepends new for a new record" do
+    visit new_post_path
+    expect(page).to have_title "New post"
+  end
+
+  it "prepends edit when editing a record" do
+    post = Post.create(title: "A post")
+    visit edit_post_path(post)
+    expect(page).to have_title "Edit A post"
+  end
+
+  it "uses the main record `name` for show pages if there is no title attribute" do
     author = Author.create(name: "John Smith")
     visit author_path(author)
     expect(page).to have_title "John Smith"
