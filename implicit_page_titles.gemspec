@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ImplicitPageTitles::VERSION
   s.authors     = ["neilang"]
   s.email       = ["neilang@gmail.com"]
-  # s.homepage    = "TODO"
+  s.homepage    = "https://github.com/neilang/implicit_page_titles"
   s.summary     = "Smart page title defaults for your Rails app."
   s.description = "Smart page title defaults for your Rails app."
   s.license     = "MIT"

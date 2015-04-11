@@ -4,13 +4,16 @@ A rails gem that adds a page title helper to your app, but also follows the ruby
 
 ## Example
 
-| Route          | Page title  |
-|----------------|-------------|
-| /              | App name    |
-| /login         | "Login"     |
-| /posts         | "Posts"     |
-| /posts/:id     | post.title  |
-| /author/:id    | author.name |
+| Route           | Page title           |
+|-----------------|----------------------|
+| /               | Application name     |
+| /login          | "Login"              |
+| /posts          | "Posts"              |
+| /posts/:id      | post.title           |
+| /author/:id     | author.name          |
+| /posts/:id/new  | "New post"           |
+| /posts/:id/edit | "Edit #{post.title}" |
+
 
 ## Usage
 
