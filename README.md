@@ -21,7 +21,7 @@ In your layout add the `page_title` helper method.
 
 e.g. within app/views/layouts/application.html.erb
 
-```
+```erb
   <title><%= page_title %></title>
 ```
 
@@ -31,13 +31,13 @@ To set a specific title for a view, call the `page_title` method within the view
 
 e.g. within app/views/welcome/index.html.erb
 
-```
+```erb
   <%- page_title("My page title") %>
 ```
 
 This method will also return the set title, enabling syntax like this:
 
-```
+```erb
   <h1><%= page_title("My page title") %></h1>
 ```
 
@@ -45,7 +45,7 @@ This method will also return the set title, enabling syntax like this:
 
 It is best to do this within the title tag:
 
-```
+```erb
   <title>
     <% unless current_page?(root_url) %>
       My app:
