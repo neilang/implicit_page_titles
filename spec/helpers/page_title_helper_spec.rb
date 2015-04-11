@@ -14,6 +14,50 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
       helper.page_title("Foobar")
       expect(helper.page_title).to eq "Foobar"
     end
+
+    it "consistently returns the same value" do
+      helper.page_title("Foobar")
+      expect(helper.page_title).to eq "Foobar"
+      expect(helper.page_title).to eq "Foobar"
+    end
+  end
+
+  describe "#path_to_page_title" do
+    it "works with a simple path" do
+      expect(helper.path_to_page_title("/test")).to eq "Test"
+    end
+
+    it "works without initial slash" do
+      expect(helper.path_to_page_title("test")).to eq "Test"
+    end
+
+    it "only uses last segment in path" do
+      expect(helper.path_to_page_title("/a/test")).to eq "Test"
+    end
+
+    it "converts dashes to spaces" do
+      expect(helper.path_to_page_title("/test-path")).to eq "Test path"
+    end
+
+    it "converts underscores to spaces" do
+      expect(helper.path_to_page_title("/test_path")).to eq "Test path"
+    end
+
+    it "ignores double spacing" do
+      expect(helper.path_to_page_title("/test--path")).to eq "Test path"
+    end
+
+    it "ignores trailing space" do
+      expect(helper.path_to_page_title("/test--")).to eq "Test"
+    end
+
+    it "returns empty string when path cannot be obtained" do
+      expect(helper.path_to_page_title("/")).to eq ""
+    end
+
+    it "returns empty string when given nil" do
+      expect(helper.path_to_page_title(nil)).to eq ""
+    end
   end
 
   describe "#app_name" do
