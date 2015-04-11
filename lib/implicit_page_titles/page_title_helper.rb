@@ -1,11 +1,14 @@
+require "implicit_page_titles/utils"
+
 module ImplicitPageTitles
   module PageTitleHelper
     def page_title(page_title = nil)
-      @page_title = page_title unless page_title.nil?
-      @page_title || scaffold_page_title || path_to_page_title(request.try(:path)) || default_page_title
+      @page_title  = page_title unless page_title.nil?
+      current_path = request.try(:path)
+      @page_title || restful_page_title || path_to_page_title(current_path) || default_page_title
     end
 
-    def scaffold_page_title
+    def restful_page_title
       return nil unless controller && controller_name
       return nil unless action_name && action_name == "show"
 
@@ -25,7 +28,7 @@ module ImplicitPageTitles
     end
 
     def default_page_title
-      Rails.application.class.to_s.split("::").first.underscore.humanize
+      Utils.app_name
     end
   end
 end

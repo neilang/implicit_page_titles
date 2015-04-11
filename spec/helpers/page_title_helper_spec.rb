@@ -32,7 +32,7 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
     end
   end
 
-  describe "#scaffold_page_title" do
+  describe "#restful_page_title" do
     before do
       allow(helper).to receive(:controller_name).and_return("posts")
     end
@@ -43,29 +43,29 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
       end
       it "returns the main object title" do
         controller.instance_variable_set :@post, double("post", title: "Hello")
-        expect(helper.scaffold_page_title).to eq "Hello"
+        expect(helper.restful_page_title).to eq "Hello"
       end
 
       it "returns the main object name if there is no title" do
         controller.instance_variable_set :@post, double("post", name: "World")
-        expect(helper.scaffold_page_title).to eq "World"
+        expect(helper.restful_page_title).to eq "World"
       end
 
       it "returns the main object title over name" do
         controller.instance_variable_set :@post, double("post", title: "Hello", name: "World")
-        expect(helper.scaffold_page_title).to eq "Hello"
+        expect(helper.restful_page_title).to eq "Hello"
       end
 
       it "returns nil if no title or name attribute" do
         controller.instance_variable_set :@post, double("post")
-        expect(helper.scaffold_page_title).to eq nil
+        expect(helper.restful_page_title).to eq nil
       end
     end
 
     context "index" do
       it "returns nil when not on show" do
         allow(helper).to receive(:action_name).and_return("index")
-        expect(helper.scaffold_page_title).to eq nil
+        expect(helper.restful_page_title).to eq nil
       end
     end
   end
