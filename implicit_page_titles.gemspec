@@ -11,15 +11,16 @@ Gem::Specification.new do |s|
   s.email       = ["neilang@gmail.com"]
   s.homepage    = "https://github.com/neilang/implicit_page_titles"
   s.summary     = "Smart page title defaults for your Rails app."
-  s.description = "Smart page title defaults for your Rails app."
+  s.description = "Allows you to easily set page titles per view in your Rails 4 app, but also follows Ruby on Rails"\
+                  "naming conventions to set sensible default title if none is specified."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 4.0"
 
-  s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails", "~> 3.2.1"
-  s.add_development_dependency "rubocop", "~> 0.30.0"
-  s.add_development_dependency "capybara", "~> 2.4.4"
+  s.add_development_dependency "sqlite3", "~> 1.3"
+  s.add_development_dependency "rspec-rails", "~> 3.2"
+  s.add_development_dependency "rubocop", "~> 0.30"
+  s.add_development_dependency "capybara", "~> 2.4"
 end

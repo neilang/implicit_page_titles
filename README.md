@@ -1,6 +1,6 @@
 # implicit_page_titles gem
 
-A rails gem that adds a page title helper to your app, but also follows the ruby and rails naming conventions to set an appropriate page where possible.
+Allows you to easily set page titles per view in your Rails 4 app, but also follows Ruby on Rails naming conventions to set sensible default title if none is specified.
 
 ## Example
 
@@ -17,7 +17,9 @@ A rails gem that adds a page title helper to your app, but also follows the ruby
 
 ## Usage
 
-In your application layout add the `page_title` helper method.
+In your layout add the `page_title` helper method.
+
+e.g. within app/views/layouts/application.html.erb
 
 ```
   <title><%= page_title %></title>
@@ -25,7 +27,9 @@ In your application layout add the `page_title` helper method.
 
 ### Explicitly setting a page title
 
-To set a specific title for a view, call the `page_title` method within the view with desired title:
+To set a specific title for a view, call the `page_title` method within the view with desired title.
+
+e.g. within app/views/welcome/index.html.erb
 
 ```
   <%- page_title("My page title") %>
@@ -50,8 +54,9 @@ It is best to do this within the title tag:
   </title>
 ```
 
+## Compatibility
 
-
+Only tested with Rails 4+ and Ruby 2+. Although untested, it would likely work with Rails 3 and Ruby 1.9.x.
 
 ## License
 
