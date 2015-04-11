@@ -2,10 +2,10 @@ module ImplicitPageTitles
   module PageTitleHelper
     def page_title(page_title = nil)
       @page_title = page_title unless page_title.nil?
-      @page_title || show_action_page_title || path_to_page_title(request.try(:path)) || app_name
+      @page_title || scaffold_page_title || path_to_page_title(request.try(:path)) || app_name
     end
 
-    def show_action_page_title
+    def scaffold_page_title
       return nil unless controller && controller_name
       return nil unless action_name && action_name == "show"
 
