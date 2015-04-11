@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = ImplicitPageTitles::VERSION
   s.authors     = ["neilang"]
   s.email       = ["neilang@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ImplicitPageTitles."
-  s.description = "TODO: Description of ImplicitPageTitles."
+  # s.homepage    = "TODO"
+  s.summary     = "Smart page title defaults for your Rails app."
+  s.description = "Smart page title defaults for your Rails app."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.2.1"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rspec-rails", "~> 3.2.1"
 end
