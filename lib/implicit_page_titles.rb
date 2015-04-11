@@ -1,0 +1,2 @@
+module ImplicitPageTitles
+end
