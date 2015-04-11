@@ -14,14 +14,20 @@ describe "page title", type: :feature do
     expect(page).to have_title "Another route"
   end
 
-  it "returns the controller name for index pages" do
+  it "returns the route path name for index pages" do
     visit posts_path
     expect(page).to have_title "Posts"
   end
 
-  it "uses the main object title for show pages" do
+  it "uses the main object `title` for show pages" do
     post = Post.create(title: "My post")
     visit post_path(post)
     expect(page).to have_title "My post"
+  end
+
+  it "uses the main object `name` for show pages if there is no title attribute" do
+    author = Author.create(name: "John Smith")
+    visit author_path(author)
+    expect(page).to have_title "John Smith"
   end
 end
