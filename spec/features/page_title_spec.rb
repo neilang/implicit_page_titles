@@ -27,7 +27,7 @@ describe "page title", type: :feature do
 
   it "prepends new for a new record" do
     visit new_post_path
-    expect(page).to have_title "New post"
+    expect(page).to have_title "New Post"
   end
 
   it "prepends edit when editing a record" do

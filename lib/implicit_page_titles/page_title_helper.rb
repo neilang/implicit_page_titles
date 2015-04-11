@@ -14,7 +14,7 @@ module ImplicitPageTitles
       when "new"
         path  = _path_without_last_segment(_current_path)
         title = path_to_page_title(path).to_s.singularize
-        "New #{title.downcase}"
+        "New #{title}"
       end
     end
 

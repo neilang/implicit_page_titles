@@ -74,7 +74,7 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
       it "returns the singular model name" do
         allow(helper).to receive(:action_name).and_return("new")
         allow(helper).to receive(:_current_path).and_return("/posts/new")
-        expect(helper.restful_page_title).to eq "New post"
+        expect(helper.restful_page_title).to eq "New Post"
       end
     end
 

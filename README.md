@@ -11,7 +11,7 @@ Allows you to easily set page titles per view in your Rails 4 app, but also foll
 | /posts          | "Posts"              |
 | /posts/:id      | post.title           |
 | /author/:id     | author.name          |
-| /posts/:id/new  | "New post"           |
+| /posts/:id/new  | "New Post"           |
 | /posts/:id/edit | "Edit #{post.title}" |
 
 
