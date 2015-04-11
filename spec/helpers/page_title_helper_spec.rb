@@ -1,13 +1,16 @@
 require "rails_helper"
 
 describe ImplicitPageTitles::PageTitleHelper, type: :helper do
-  describe "#page_title default response" do
-    subject { helper.page_title }
-    it { should == "Dummy app" }
+  describe "#page_title" do
+    it "returns the app name by default" do
+      expect(helper.page_title).to eq "Dummy app"
+    end
   end
 
   describe "#app_name" do
     subject { helper.app_name }
-    it { should == "Dummy app" }
+    it "returns a human readable app name" do
+      expect(subject).to eq "Dummy app"
+    end
   end
 end
