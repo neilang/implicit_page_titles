@@ -108,8 +108,8 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
     end
   end
 
-  describe "#app_name" do
-    subject { helper.app_name }
+  describe "#default_page_title" do
+    subject { helper.default_page_title }
     it "returns a human readable app name" do
       expect(subject).to eq "Dummy app"
     end

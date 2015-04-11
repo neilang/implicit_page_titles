@@ -2,7 +2,7 @@ module ImplicitPageTitles
   module PageTitleHelper
     def page_title(page_title = nil)
       @page_title = page_title unless page_title.nil?
-      @page_title || scaffold_page_title || path_to_page_title(request.try(:path)) || app_name
+      @page_title || scaffold_page_title || path_to_page_title(request.try(:path)) || default_page_title
     end
 
     def scaffold_page_title
@@ -24,7 +24,7 @@ module ImplicitPageTitles
       title.humanize
     end
 
-    def app_name
+    def default_page_title
       Rails.application.class.to_s.split("::").first.underscore.humanize
     end
   end
