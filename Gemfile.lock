@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    implicit_page_titles (0.0.1)
+    implicit_page_titles (0.0.2)
       rails (~> 4.0)
 
 GEM
