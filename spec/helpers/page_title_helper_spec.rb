@@ -20,6 +20,16 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
       expect(helper.page_title).to eq "Foobar"
       expect(helper.page_title).to eq "Foobar"
     end
+
+    it "returns the app name for the root path" do
+      controller.request.path = "/"
+      expect(helper.page_title).to eq "Dummy app"
+    end
+
+    it "returns the path as page title when possible" do
+      controller.request.path = "/test-page"
+      expect(helper.page_title).to eq "Test page"
+    end
   end
 
   describe "#path_to_page_title" do
@@ -51,12 +61,12 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
       expect(helper.path_to_page_title("/test--")).to eq "Test"
     end
 
-    it "returns empty string when path cannot be obtained" do
-      expect(helper.path_to_page_title("/")).to eq ""
+    it "returns nil when path cannot be obtained" do
+      expect(helper.path_to_page_title("/")).to eq nil
     end
 
-    it "returns empty string when given nil" do
-      expect(helper.path_to_page_title(nil)).to eq ""
+    it "returns nil when given nil" do
+      expect(helper.path_to_page_title(nil)).to eq nil
     end
   end
 
