@@ -5,6 +5,15 @@ describe ImplicitPageTitles::PageTitleHelper, type: :helper do
     it "returns the app name by default" do
       expect(helper.page_title).to eq "Dummy app"
     end
+
+    it "returns the set title" do
+      expect(helper.page_title("Foo")).to eq "Foo"
+    end
+
+    it "remembers a previously set page_title" do
+      helper.page_title("Foobar")
+      expect(helper.page_title).to eq "Foobar"
+    end
   end
 
   describe "#app_name" do
