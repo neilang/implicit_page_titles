@@ -1,6 +1,6 @@
 # implicit_page_titles gem
 
-Allows you to easily set page titles per view in your Rails 4 app, but also follows Ruby on Rails naming conventions to set sensible default title if none is specified.
+Allows you to easily set page titles per view in your Rails app, but also follows Ruby on Rails naming conventions to set sensible default title if none is specified.
 
 ## Example
 
@@ -56,7 +56,7 @@ It is best to do this within the title tag:
 
 ## Compatibility
 
-Only tested with Rails 4+ and Ruby 2+. Although untested, it would likely work with Rails 3 and Ruby 1.9.x.
+Tested with Rails 4 & 5, and Ruby 2+. Although untested, it would likely work with Rails 3 and Ruby 1.9.x.
 
 ## License
 
